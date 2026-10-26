@@ -29,4 +29,5 @@ dt,dd{margin:0;padding:8px 0;border-bottom:1px solid var(--line)}
 dd{font-weight:500;padding-inline-start:16px}
 .sum{font-weight:800;color:var(--t2)}
 ol{margin:0;padding-inline-start:22px}li{margin-bottom:6px}
+.note{background:var(--bg);border-inline-start:4px solid var(--t1);border-radius:8px;padding:10px 12px;margin:0 0 20px;font-size:.95rem}
 footer{margin-top:24px;font-size:.9rem;color:var(--muted)}
