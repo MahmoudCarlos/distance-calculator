@@ -27,12 +27,12 @@ function render() {
   $("seg-t2").style.flexGrow = t2.km / w;
 
   // شرح الحساب خطوة بخطوة
-  const steps = [`المسافة اللي كتبتها: <b>${fmt(r.entered)} كم</b>.`];
+  const steps = [`المسافة الكاملة اللي كتبتها (زي جوجل ماب): <b>${fmt(r.entered)} كم</b>.`];
   if (r.chargeable === 0) {
-    steps.push(`أول ${f} كم مجانية، والمسافة دي كلها ضمنها، فالمبلغ <b>0 جنيه</b>.`);
+    steps.push(`أول ${f} كم غير محسوبة، والمسافة دي كلها ضمنها، فالمبلغ <b>0 جنيه</b>.`);
   } else {
-    steps.push(`نخصم أول ${f} كم لأنها مجانية: ${fmt(r.entered)} − ${f} = <b>${fmt(r.chargeable)} كم</b> قابلة للدفع.`);
-    steps.push(`أول ${fmt(t1.km)} كم قابلة للدفع بسعر ${t1.rate} جنيه: ${fmt(t1.km)} × ${t1.rate} = <b>${fmt(t1.amount)} جنيه</b>.`);
+    steps.push(`نخصم أول ${f} كم لأنها غير محسوبة: ${fmt(r.entered)} − ${f} = <b>${fmt(r.chargeable)} كم</b>. ده <b>صافي المسافة</b>، وهو الرقم اللي بيظهر في شاشة الدفعات بالتطبيق.`);
+    steps.push(`أول ${fmt(t1.km)} كم من الصافي بسعر ${t1.rate} جنيه: ${fmt(t1.km)} × ${t1.rate} = <b>${fmt(t1.amount)} جنيه</b>.`);
     steps.push(t2.km > 0
       ? `الباقي ${fmt(t2.km)} كم بسعر ${t2.rate} جنيه: ${fmt(t2.km)} × ${t2.rate} = <b>${fmt(t2.amount)} جنيه</b>.`
       : `مفيش كيلومترات زيادة بعد كده، فشريحة ${t2.rate} جنيه مش بتتحسب.`);
