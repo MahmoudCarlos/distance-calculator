@@ -1,0 +1,32 @@
+:root{--ink:#17262b;--muted:#5d6f75;--bg:#eaf0f1;--card:#fff;--line:#d3dde0;--free:#b9c6ca;--t1:#e3a51b;--t2:#0e6b5c;--bad:#b3261e}
+@media (prefers-color-scheme:dark){:root{--ink:#e8f0f1;--muted:#9bb0b6;--bg:#0f1a1d;--card:#172428;--line:#2b3d42;--free:#4a5d62;--t1:#e3a51b;--t2:#35b39c;--bad:#ff8a80}}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--bg);color:var(--ink);font-family:"Tajawal",Tahoma,Arial,sans-serif;font-size:17px;line-height:1.7;padding:16px}
+main{max-width:560px;margin:0 auto;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:24px 20px}
+h1{font-size:1.7rem;font-weight:800;margin:0 0 4px}
+h2{font-size:1.05rem;font-weight:800;margin:24px 0 8px}
+.lead{margin:0 0 20px;color:var(--muted)}
+label{display:block;font-weight:500;margin-bottom:6px}
+.row{display:flex;gap:8px}
+input{flex:1;min-width:0;font:inherit;font-size:1.3rem;padding:10px 14px;border:2px solid var(--line);border-radius:10px;background:transparent;color:inherit;direction:ltr;text-align:right}
+input[aria-invalid=true]{border-color:var(--bad)}
+button{font:inherit;font-weight:500;padding:0 18px;border:2px solid var(--line);border-radius:10px;background:transparent;color:inherit;cursor:pointer}
+button:hover{border-color:var(--t2)}
+:focus-visible{outline:3px solid var(--t1);outline-offset:2px}
+.error{color:var(--bad);min-height:1.7em;margin:6px 0 0}
+.total{display:flex;align-items:baseline;gap:10px;margin:8px 0 14px}
+.total span{font-size:4rem;font-weight:800;line-height:1;color:var(--t2)}
+.total small{color:var(--muted);font-size:1.05rem}
+.bar{display:flex;height:16px;border-radius:8px;overflow:hidden;background:var(--line)}
+.bar i{flex:0 1 0;min-width:0}
+#seg-free{background:var(--free)}#seg-t1{background:var(--t1)}#seg-t2{background:var(--t2)}
+.legend{font-size:.9rem;color:var(--muted);margin:8px 0 0}
+.k{display:inline-block;width:11px;height:11px;border-radius:3px;margin:0 10px 0 4px;vertical-align:-1px}
+.k.free{background:var(--free)}.k.t1{background:var(--t1)}.k.t2{background:var(--t2)}
+dl{margin:0;display:grid;grid-template-columns:1fr auto;border-top:1px solid var(--line)}
+dt,dd{margin:0;padding:8px 0;border-bottom:1px solid var(--line)}
+dd{font-weight:500;padding-inline-start:16px}
+.sum{font-weight:800;color:var(--t2)}
+ol{margin:0;padding-inline-start:22px}li{margin-bottom:6px}
+footer{margin-top:24px;font-size:.9rem;color:var(--muted)}

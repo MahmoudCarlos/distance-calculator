@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>حاسبة مبلغ المسافة</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+  <h1>حاسبة مبلغ المسافة</h1>
+  <p class="lead">اكتب المسافة الكاملة بالكيلومتر، وهتظهر لك المبلغ بالجنيه مع شرح الحساب.</p>
+
+  <label for="km">أدخل المسافة (كم)</label>
+  <div class="row">
+    <input id="km" type="text" inputmode="decimal" autocomplete="off" placeholder="مثال: 7.3">
+    <button id="reset" type="button">مسح</button>
+  </div>
+  <p id="error" class="error" role="alert"></p>
+
+  <section id="result" hidden>
+    <div class="total"><span id="total">0</span><small>جنيه مصري</small></div>
+
+    <div class="bar" aria-hidden="true">
+      <i id="seg-free"></i><i id="seg-t1"></i><i id="seg-t2"></i>
+    </div>
+    <p class="legend"><span class="k free"></span>مجاني <span class="k t1"></span>1 جنيه للكم <span class="k t2"></span>3 جنيه للكم</p>
+
+    <h2>التفاصيل</h2>
+    <dl>
+      <dt>المسافة المُدخلة</dt><dd id="b-entered"></dd>
+      <dt>الكيلومترات المجانية</dt><dd id="b-free"></dd>
+      <dt>الكيلومترات القابلة للدفع</dt><dd id="b-charge"></dd>
+      <dt>كيلومترات بسعر 1 جنيه</dt><dd id="b-t1"></dd>
+      <dt>كيلومترات بسعر 3 جنيه</dt><dd id="b-t2"></dd>
+      <dt class="sum">إجمالي المبلغ</dt><dd class="sum" id="b-total"></dd>
+    </dl>
+
+    <h2>إزاي اتحسبت؟</h2>
+    <ol id="steps"></ol>
+  </section>
+
+  <footer>
+    القاعدة: أول 2 كم مجانية، من كم 3 إلى 5 بـ1 جنيه للكيلو، ومن كم 6 فما فوق بـ3 جنيه للكيلو. الكسور بتتحسب بالتناسب من غير تقريب.
+  </footer>
+</main>
+<script src="config.js"></script>
+<script src="calculator.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
